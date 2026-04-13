@@ -1,0 +1,231 @@
+<!DOCTYPE html><!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Les Chauffeurs Bourguignons</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #0d0d0d;
+      color: white;
+    }
+
+    header {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1549921296-3a6b62c1c2a2') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-blend-mode: darken;
+      background-color: rgba(0,0,0,0.7);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: gold;
+    }
+
+    header p {
+      margin: 10px 0;
+      font-size: 1.2rem;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: gold;
+      color: black;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #d4af37;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: gold;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      background: #222;
+    }
+
+    footer {
+      background: black;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Les Chauffeurs Bourguignons</h1>
+  <p>Votre chauffeur privé en Bourgogne</p>
+  <button class="btn">Réserver maintenant</button>
+</header>
+
+<section>
+  <h2>Nos Services</h2>
+  <div class="services">
+    <div class="card">🚗 Transferts gare / aéroport</div>
+    <div class="card">💼 Transport business</div>
+    <div class="card">💍 Mariages & événements</div>
+    <div class="card">🍷 Tours en Bourgogne</div>
+  </div>
+</section>
+
+<section>
+  <h2>Zone d’intervention</h2>
+  <p>Quincey (21700), Beaune, Dijon et toute la Bourgogne</p>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p>📞 07 67 99 99 20</p>
+  <p>📧 leschauffeuresbourguignons@gmail.com</p>
+  <button class="btn">Demander un devis</button>
+</section>
+
+<section>
+  <h2>Réservation</h2>
+
+  <form action="https://formspree.io/f/mykbajqn" method="POST" class="booking-form">
+
+    <label>Nom
+      <input type="text" name="nom" placeholder="Nom" required>
+    </label>
+
+    <label>Email
+      <input type="email" name="email" placeholder="Email" required>
+    </label>
+
+    <label>Téléphone
+      <input type="tel" name="telephone" placeholder="Téléphone" required>
+    </label>
+
+    <label>Date & Heure
+      <input type="datetime-local" name="date" required>
+    </label>
+
+    <label>Lieu de départ
+      <input type="text" name="depart" placeholder="Lieu de départ" required>
+    </label>
+
+    <label>Destination
+      <input type="text" name="destination" placeholder="Destination" required>
+    </label>
+
+    <label>Nombre de passagers
+      <input type="number" name="passagers" placeholder="Nombre de passagers" required>
+    </label>
+
+    <label>Détails supplémentaires
+      <textarea name="message" placeholder="Optionnel"></textarea>
+    </label>
+
+    <button class="btn" type="submit">Réserver</button>
+
+  </form>
+</section>
+
+<style>
+.booking-form {
+  display: flex;
+  flex-direction: column; /* tous les champs en vertical */
+  gap: 15px; /* espace entre chaque champ */
+  max-width: 400px; /* largeur max pour le formulaire */
+  margin: auto; /* centrer le formulaire */
+}
+
+.booking-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+.booking-form input,
+.booking-form textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 5px;
+  font-size: 1rem;
+}
+
+.booking-form textarea {
+  resize: vertical;
+}
+
+.booking-form button {
+  background: gold;
+  color: black;
+  border: none;
+  padding: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.booking-form button:hover {
+  background: #d4af37;
+}
+</style>
+
+<script>
+document.getElementById("bookingForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  document.getElementById("confirmation").innerText =
+    "✅ Demande envoyée ! Nous vous contacterons rapidement.";
+
+  this.reset();
+});
+</script>
+
+<footer>
+  <p>© 2026 Les Chauffeurs Bourguignons - Tous droits réservés</p>
+</footer>
+
+</body>
+</html>
+
+
